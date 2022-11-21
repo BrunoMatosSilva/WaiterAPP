@@ -9,13 +9,11 @@ import { router } from './router';
 
 dotenv.config();
 const app = express();
-const server = http.createServer(app);
-export const io = new Server(server);
+const serverHttp = http.createServer(app);
+export const io = new Server(serverHttp);
 
 mongoose.connect(`${process.env.MONGODB_URL}`)
   .then(() => {
-    const port = 3002;
-
 
     app.use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
@@ -27,8 +25,8 @@ mongoose.connect(`${process.env.MONGODB_URL}`)
     app.use(express.json());
     app.use(router);
 
-    server.listen(port, () => {
-      console.log(`🚀Server is running na Porta ${port}`);
+    serverHttp.listen(3001, () => {
+      console.log('🚀Server is running na PORT 3000');
     });
   })
   .catch(() => console.log('Erro ao conectar no mongodb!'));
