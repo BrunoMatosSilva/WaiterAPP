@@ -66,7 +66,7 @@ export function Cart({ cartItems, onAdd, onDecrement, onConfirmOrder, selectedTa
               <ProductContainer>
                 <Image
                   source={{
-                    uri: `http://192.168.0.116:3001/uploads/${cartItem.product.imagePath}`,
+                    uri: `https://waiterapi-production.up.railway.app/uploads/${cartItem.product.imagePath}`,
                   }}
                 />
 
