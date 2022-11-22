@@ -45,7 +45,7 @@ export function ProductModal({ visible, onClose, product, onAddToCart }: Product
 
       <Image
         source={{
-          uri: `http://192.168.0.116:3001/uploads/${product.imagePath}`,
+          uri: `https://waiterapi-production.up.railway.app/uploads/${product.imagePath}`,
         }}
       >
 

@@ -72,7 +72,7 @@ export function OrderModal({
             {order.products.map(({_id, product, quantity}) => (
               <div className="item" key={_id}>
                 <img
-                  src={`http://localhost:3001/uploads/${product.imagePath}`}
+                  src={`${import.meta.env.VITE_API_URL}/uploads/${product.imagePath}`}
                   alt={product.name}
                   width="56"
                   height="28.51"
